@@ -1,0 +1,375 @@
+<%- include partials/header.ejs %>
+
+    <div class="container">
+
+        <div id="depositDiv" style="display: none; margin-top: 20px; text-align: center;">
+            <button onclick="connectContract()" class="btn btn-primary" style="font-weight: bold; color: white;
+                     background-color: #007BFF; border: none; padding: 10px 20px; border-radius: 5px;width: 50%;">
+                connect to the contract</button>
+            <br>
+            <input type="number" id="depositInput" placeholder="Enter Amount" style="margin-top: 10px; margin-bottom: 10px; width: 250px; 
+                height: 40px; padding: 5px; border-radius: 5px;width: 50%;">
+            <br>
+            <button onclick="depositContract()" class="btn btn-info" style="font-weight: bold; color: white;
+                     background-color: #17A2B8; border: none; padding: 10px 20px; border-radius: 5px;width: 50%;">
+                Send ether to the Contract</button>
+        </div>
+
+
+        <div class="container d-flex justify-content-between">
+
+            <div class="container-content" style="max-width: 900px; margin: 0 auto; padding: 20px;">
+                <div style="display: flex; justify-content: center; align-items: center; background-color: #808080;">
+                    <div id="techspecs" class="rounded-xl mt-10"
+                        style="background-color: #808080; color: white; padding: 20px; border-radius: 15px;">
+
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Model tested</strong></td>
+                                    <td>Audi Q6 e-tron 55 pre-production prototype</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Powertrain</strong></td>
+                                    <td>electric - two electric motors and lithium-ion battery pack of 100kWh capacity
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Transmission</strong></td>
+                                    <td>automatic - single-speed, all-wheel drive</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Body style</strong></td>
+                                    <td>five-door, five-seat SUV</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CO<sub>2</sub> emissions</strong></td>
+                                    <td>0g/km</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Irish motor tax</strong></td>
+                                    <td>€120</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Price</strong></td>
+                                    <td>€ 80506</td>
+                                </tr>
+                                <div>
+                                    <td style="display: flex; align-items: center; justify-content: center;">
+                                        <button onclick="convertToBitcoin()" class="btn btn-dark rounded-pill" ;">Price
+                                            in Bitcoin</button>
+
+                                    </td>
+                                    <td>
+                                        <div id="bitcoinPrice"
+                                            style="margin-left: 10px;color:#264E6F;font-weight: bold;">
+                                        </div>
+                                    </td>
+                                </div>
+                                <tr>
+                                    <div class="header" style="margin-top: 20px; text-align: center;">
+                                        <h1>Explore Vorsprung durch Technik: The New Audi Q6 e-tron</h1>
+                                    </div>
+
+                                    <div class="image-container"
+                                        style="display: flex; justify-content: center; margin-top: 20px;">
+                                        <img src="/images/audi1.jpg" alt="audi car"
+                                            style="max-width: 100%; height: auto;">
+                                    </div>
+
+                                    <div class="content" style="margin: 20px auto; max-width: 800px;">
+                                        <p>
+                                            Dublin 19th March: - The Audi Q6 e-tron* is the first production model on
+                                            the
+                                            Premium Platform
+                                            Electric (PPE), marking the next step in the company's transformation into a
+                                            provider of premium
+                                            electric mobility. The model is defined not only by impressive driving and
+                                            charging performance, but
+                                            also by increased efficiency and long range. The Audi Q6 e-tron* embodies
+                                            typical Audi SUV styling
+                                            with a further refined e-tron design language. The Audi Q6 e-tron quattro*
+                                            and
+                                            SQ6 e-tron* will be
+                                            available to order from Q2 2024 and will be delivered to customers in summer
+                                            2024.
+                                        </p>
+                                        <p>
+                                            The PPE, developed jointly with Porsche, and the E3 1.2 electronic
+                                            architecture
+                                            are important
+                                            milestones in the expansion of Audi's global range of electrically powered
+                                            models. They mark the
+                                            start of a comprehensive strengthening and rejuvenation of the model
+                                            portfolio.
+                                            The Q6 e-tron*
+                                            underpins Audi's promise to offer electric vehicles in all core segments by
+                                            2027. “Built on the new
+                                            PPE platform, the Audi Q6 e-tron* is the next technological leap in premium
+                                            electric mobility for
+                                            our customers," said Gernot Döllner, Chairman of the Board of Management of
+                                            AUDI
+                                            AG, at the world
+                                            premiere at the main plant in Ingolstadt. "The PPE shows how we are pooling
+                                            expertise within the
+                                            Volkswagen Group and thus making electric mobility scalable. Thanks to the
+                                            PPE,
+                                            we are able to
+                                            launch high-volume models with high technical standards in different
+                                            segments
+                                            and thus further
+                                            electrify our portfolio," the Audi CEO added.
+                                        </p>
+                                        <p>
+                                            The flexibility of the PPE helps in giving the future models their
+                                            independent
+                                            character and the
+                                            typical Audi DNA, despite shared technical underpinnings.
+                                        </p>
+                                        <p>
+                                            Powerful, compact, and highly efficient electric motors, as well as a newly
+                                            developed lithium-ion
+                                            battery consisting of twelve modules and 180 prismatic cells with a total
+                                            gross
+                                            capacity of 100 kWh
+                                            (94.9 net) ensure a range of up to 625 km. The new Audi Q6 e-tron ensures
+                                            the
+                                            sporty performance
+                                            Audi is known for with a system output of 285 kW and the SQ6 e-tron with a
+                                            system output of up to
+                                            380 kW when the extra function is engaged, thus set standards in terms of
+                                            performance, range,
+                                            charging, driving dynamics, and design. At market launch, two model variants
+                                            with all-wheel drive
+                                            will be available, followed by particularly efficient models with rear-wheel
+                                            drive designed for
+                                            range, which will also mark the entry into the Q6 e-tron series. The Q6
+                                            e-tron
+                                            quattro accelerates
+                                            from 0 to 100 km/h in 5.9 seconds. The SQ 6 e-tron takes just 4.3 seconds.
+                                            The
+                                            vehicles' top speeds
+                                            are 210km/h and 230 km/h respectively. Two models with rear-wheel drive will
+                                            follow at a later date
+                                            - depending on the market. While one model will be designed for efficiency
+                                            and
+                                            range, the other will
+                                            mark the entry into the Q6 e-tron series.
+                                        </p>
+                                        <p>
+                                            Thanks to 800-volt technology and a maximum charging capacity of 270 kW as
+                                            standard, short charging
+                                            stops are possible with the Audi Q6 e-tron*. Up to 255 km can be recharged
+                                            in
+                                            just ten minutes at an
+                                            appropriate charging station (High Power Charging, HPC). The state-of-charge
+                                            (SoC) increases from
+                                            ten to 80 percent in around 21 minutes. Intelligent, high-performance and
+                                            predictive thermal
+                                            management is a key component of this impressive charging performance.
+                                            Equipped
+                                            with Plug & Charge,
+                                            the vehicle authorises itself at compatible charging stations when the
+                                            charging
+                                            cable is plugged in
+                                            and commences the charging process. Charging is also fully automatic. If a
+                                            charging station works
+                                            with 400-volt technology, the Audi Q6 e-tron* can, for the first time,
+                                            enable
+                                            bank charging. The
+                                            800-volt battery is automatically divided into two batteries at equal
+                                            voltage,
+                                            which can then be
+                                            charged in parallel with up to 135 kW. Depending on the state of charge,
+                                            both
+                                            halves of the battery
+                                            are first equalised and then charged simultaneously. AC charging with up to
+                                            11
+                                            kW is possible at
+                                            standard home chargers.
+                                        </p>
+                                        <p>
+                                            An important component in increasing the efficiency and therefore the range
+                                            of
+                                            the Audi Q6 e-tron*
+                                            is the advanced recuperation system. Around 95 percent of all everyday
+                                            braking
+                                            processes can be
+                                            handled by this system. The Audi Q6 e-tron* recuperates at up to 220 kW.
+                                        </p>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; font-family: Arial, sans-serif;text-align: center;">
+                    <div style="margin-bottom: 10px;">
+                        <button onclick="connectContract()" class="btn btn-primary"
+                            style="font-weight: bold; color: white; background-color: #007BFF; border: none; padding: 10px 20px;">I
+                            Have Read It All</button>
+                        <p id="contractArea" style="margin-top: 10px;"></p>
+                    </div>
+                    <div>
+                        <button onclick="getContractAccount()" class="btn btn-success"
+                            style="font-weight: bold; color: white; background-color: #28A745; border: none; padding: 10px 20px;">GET
+                            CONTRACT ACCOUNT</button>
+                        <p id="contractAccount" style="margin-top: 10px;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <br>
+    <script> // the below script code is convention in web3 in forming the communication with Web
+
+        let account;
+        const ownerAccount = "0xa6324c08D38726ca8a5B3387E7fC0B73f7C52E9C"
+        const connectMetamask = async () => {
+            if (window.ethereum !== "undefined") {
+                const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+                account = accounts[0];
+
+                if (account.toLowerCase() === ownerAccount.toLowerCase()) {
+                    document.getElementById("depositDiv").style.display = "block";
+                    document.getElementById("userArea").innerHTML = `Owner Wallet Connected !`;
+                }
+                else {
+                    document.getElementById("userArea").innerHTML = `User Wallet Connected!`;
+                }
+            }
+        }
+
+        const connectContract = async () => {
+            const ABI = [
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [],
+                    "name": "amount",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "depositEther",
+                    "outputs": [],
+                    "stateMutability": "payable",
+                    "type": "function"
+
+                },
+                {
+                    "inputs": [],
+                    "name": "getEther",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "hasReceivedEther",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "stateMutability": "payable",
+                    "type": "receive"
+                }
+            ];
+
+            ;
+            const Address = "0x0Ed09f7BdffbAdB9A3F48165a0293bF6fD05aD08"; // Taking Address from Remix 
+            window.web3 = await new Web3(window.ethereum);
+            window.contract = await new window.web3.eth.Contract(ABI, Address);
+            if (window.contract) {
+                document.getElementById("contractArea").innerHTML = "Thanks For Your Time !"; // calling the elementID above
+            }
+
+        }
+
+        const getContractAccount = async () => {
+            const data = await window.contract.methods.getEther().send({ from: account });
+            console.log("data check")
+            console.log(data);
+            if (data) {
+                document.getElementById("contractAccount").innerHTML = `Your Reward Has been issued`;
+
+            }
+            alert('Award issued!');
+
+        }
+
+        const getBalanceApple = async () => { // const getBalanceApple is the HTML function & .contract.getBalance is the smart contract function
+            const data = await window.contract.methods.getBalance().call();
+            document.getElementById("balanceArea").innerHTML = `Contract Balance: ${data}`;
+        }
+
+        const depositContract = async () => {
+            const amount = document.getElementById("depositInput").value;
+            await window.contract.methods.depositEther().send({ from: account, value: amount });
+        }
+
+        const withdraw = async () => {
+            const amount = document.getElementById("amountInput").value;
+            const address = document.getElementById("addressInput").value;
+            await window.contract.methods.withdraw(address, amount).send({ from: account });
+        }
+
+
+        const convertToBitcoin = async () => {
+            try {
+                const response = await $.ajax({
+                    url: 'https://api.blockchain.com/v3/exchange/tickers/BTC-EUR',
+                    type: 'GET'
+                });
+                console.log(response)
+
+                const priceInBitcoin = response.price_24h;
+                const convertedPrice = priceInBitcoin * 80506
+
+                $('#bitcoinPrice').text(priceInBitcoin);
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        }
+    </script>
+    <%- include partials/footer.ejs %>
