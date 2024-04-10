@@ -1,0 +1,66 @@
+<%- include partials/header.ejs %>
+
+
+  <div class="jumbotron">
+    <h1 class="display-4"> Welcome !</h1>
+    <p class="lead">COIN PRICE INFO</p>
+    <hr class="my-4">
+    <p></p>
+    <p class="lead">
+      <a class="btn btn-success btn-lg" href="https://www.coingecko.com/" role="button">Learn more</a>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="alert alert-info" role="alert" style="font-weight: bolder;font-style: oblique;text-align: center;">
+      Current Cryptocurrency Price
+    </div>
+    <table class="table table-secondary">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', async () => {
+      const getTickers = async () => {
+        const options = {
+          method: 'GET',
+          url: 'https://l4chsalter-alternative-me-crypto-v1.p.rapidapi.com/v1/ticker/',
+          headers: {
+            'X-RapidAPI-Key': '03939cc397msh8dcd64407a76398p17c483jsncfe1fcb69495',
+            'X-RapidAPI-Host': 'l4chsalter-alternative-me-crypto-v1.p.rapidapi.com'
+          }
+        };
+
+        try {
+          const response = await axios.request(options);
+          console.log(response);
+
+          const tableBody = document.getElementById('tableBody');
+
+          response.data.slice(0, 3).forEach((coin, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+          <th scope="row">${index + 1}</th>
+          <td>${coin.name}</td>
+          <td>$${parseFloat(coin.price_usd).toFixed(2)}</td>
+        `;
+            tableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      getTickers();
+    });
+  </script>
+  <%- include partials/footer.ejs %>

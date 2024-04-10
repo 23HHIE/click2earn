@@ -23,8 +23,8 @@ router.post('/', function (req, res, next) {
   res.render('index', { title: 'Click2Earn', name: req.body.name });
 });
 
-router.get('/page1', function (req, res, next) {
-  res.render('page1', { title: 'Click2Earn', name: null });
+router.get('/price', function (req, res, next) {
+  res.render('price', { title: 'Click2Earn', name: null });
 });
 
 router.get('/page2', function (req, res, next) {
