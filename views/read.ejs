@@ -321,7 +321,7 @@
             window.web3 = await new Web3(window.ethereum);
             window.contract = await new window.web3.eth.Contract(ABI, Address);
             if (window.contract) {
-                document.getElementById("contractArea").innerHTML = "Thanks For Your Time !"; // calling the elementID above
+                document.getElementById("contractArea").innerHTML = "Contract connected !"; // calling the elementID above
             }
 
         }
