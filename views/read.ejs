@@ -364,9 +364,11 @@
                 console.log(response)
 
                 const priceInBitcoin = response.price_24h;
-                const convertedPrice = priceInBitcoin * 80506
+                console.log(priceInBitcoin)
+                const convertedPrice = 80506 / priceInBitcoin
+                console.log(convertedPrice)
 
-                $('#bitcoinPrice').text(priceInBitcoin);
+                $('#bitcoinPrice').text(convertedPrice);
             } catch (error) {
                 console.log('Error:', error);
             }
