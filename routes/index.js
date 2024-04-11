@@ -6,9 +6,6 @@ router.get('/', function (req, res, next) {
   res.render('home', { title: 'Click2Earn', name: null });
 });
 
-router.get('/demo', function (req, res, next) {
-  res.render('demo', { title: 'Click2Earn', name: null });
-});
 
 router.get('/read', function (req, res, next) {
   res.render('read', { title: 'Click2Earn', name: null });
