@@ -332,7 +332,7 @@
             console.log("data check")
             console.log(data);
             if (data) {
-                document.getElementById("contractAccount").innerHTML = `Your Reward Has been issued`;
+                document.getElementById("contractAccount").innerHTML = `Your reward has been issued`;
 
             }
             alert('Award issued!');
@@ -347,6 +347,7 @@
         const depositContract = async () => {
             const amount = document.getElementById("depositInput").value;
             await window.contract.methods.depositEther().send({ from: account, value: amount });
+            alert('The contract has been topped up!');
         }
 
         const withdraw = async () => {

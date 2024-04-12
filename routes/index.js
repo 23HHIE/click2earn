@@ -28,8 +28,8 @@ router.get('/page2', function (req, res, next) {
   res.render('page2', { title: 'Click2Earn', name: null });
 });
 
-router.get('/page3', function (req, res, next) {
-  res.render('page3', { title: 'Click2Earn', name: null });
+router.get('/contactus', function (req, res, next) {
+  res.render('contactus', { title: 'Click2Earn', name: null });
 });
 
 router.get('/page4', function (req, res, next) {
