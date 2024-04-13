@@ -6,7 +6,7 @@
             <button onclick="connectContract()" class="btn btn-primary" style="font-weight: bold; color: white;
                      background-color: #007BFF; border: none; padding: 10px 20px; border-radius: 5px;width: 50%;">
                 connect to the contract</button>
-            <p id="contractArea" style="margin-top: 10px;"></p>
+            <!-- <p id="contractArea" style="margin-top: 10px;"></p> -->
 
             <input type="number" id="depositInput" placeholder="Enter Amount" style="margin-top: 10px; margin-bottom: 10px; width: 250px; 
                 height: 40px; padding: 5px; border-radius: 5px;width: 50%;">
@@ -57,13 +57,12 @@
                                 </tr>
                                 <div>
                                     <td style="display: flex; align-items: center; justify-content: center;">
-                                        <button onclick="convertToBitcoin()" class="btn btn-dark rounded-pill" ;">Price
-                                            in Bitcoin</button>
+                                        <button onclick="convertToETH()" class="btn btn-dark rounded-pill" ;">Price
+                                            in ETH</button>
 
                                     </td>
                                     <td>
-                                        <div id="bitcoinPrice"
-                                            style="margin-left: 10px;color:#264E6F;font-weight: bold;">
+                                        <div id="ETHPrice" style="margin-left: 10px;color:#264E6F;font-weight: bold;">
                                         </div>
                                     </td>
                                 </div>
@@ -211,6 +210,7 @@
                             style="font-weight: bold; color: white; background-color: #007BFF; border: none; padding: 10px 20px;">I
                             Have Read It All</button>
                         <p id="contractArea" style="margin-top: 10px;"></p>
+
                     </div>
                     <div>
                         <button onclick="getContractAccount()" class="btn btn-success"
@@ -357,20 +357,20 @@
         }
 
 
-        const convertToBitcoin = async () => {
+        const convertToETH = async () => {
             try {
                 const response = await $.ajax({
-                    url: 'https://api.blockchain.com/v3/exchange/tickers/BTC-EUR',
+                    url: 'https://api.blockchain.com/v3/exchange/tickers/ETH-EUR',
                     type: 'GET'
                 });
                 console.log(response)
 
-                const priceInBitcoin = response.price_24h;
-                console.log(priceInBitcoin)
-                const convertedPrice = 80506 / priceInBitcoin
+                const priceInETH = response.price_24h;
+                console.log(priceInETH)
+                const convertedPrice = 80506 / priceInETH
                 console.log(convertedPrice)
 
-                $('#bitcoinPrice').text(convertedPrice);
+                $('#ETHPrice').text(convertedPrice);
             } catch (error) {
                 console.log('Error:', error);
             }
